@@ -13,7 +13,7 @@
 **<CountdownComponent  endTime={"2020/01/01 18:30:00"} />**
 
 ## Usage👇
-**<CountdownComponent second="10" timeoutFn={timeoutFn} />**
-**<CountdownComponent second="100" />**
+**sdfsadf**
+**sdfasdfsdfasdf**
 **<CountdownComponent endTime={"2017/09/19 18:30:00"} myCorrNowTime={"2017/09/19 18:29:50"} timeoutFn={timeoutFn} />**
 **<CountdownComponent endTime={"2030/09/19 18:30:00"} />**
