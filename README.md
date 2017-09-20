@@ -1,5 +1,12 @@
 # Countdown Component
 
+## 先上效果图
+![image](./images/image.png)
+
+
+
+
+
 ## React的倒计时组件，基本用法：
 
 
