@@ -2,7 +2,7 @@
  * @Author: 华志林 
  * @Date: 2017-09-19 14:02:24 
  * @Last Modified by: 华志林
- * @Last Modified time: 2017-09-19 15:51:29
+ * @Last Modified time: 2017-09-20 10:26:43
  * 
  * 
  * ↓↓↓↓↓↓↓《使用文档》必看↓↓↓↓↓↓↓
@@ -100,31 +100,29 @@ export default class CountdownComponent extends React.Component {
 
    //格式化日期
    dateFormat(arg) {
-      arg = parseInt(arg);//下取整
+      arg = parseInt(arg, 10);//下取整
       return (arg < 10 ? "0" + arg : arg);//转格式
    }
 
    render() {
-      const totalSecond = parseInt(this.state.countdownShow / 1000);
-      const s = this.props.second ? totalSecond : this.dateFormat(totalSecond % 60);
+      const totalSecond = parseInt(this.state.countdownShow / 1000, 10);
+      const d = this.dateFormat(totalSecond / 60 / 60 / 24);
+      const h = this.dateFormat(totalSecond / 60 / 60 % 24);
       const m = this.dateFormat(totalSecond / 60 % 60);
-      const h = this.dateFormat(totalSecond / 60 / 60 % 60);
-      const d = this.dateFormat(totalSecond / 60 / 60 / 60 % 24);
+      const s = this.props.second ? totalSecond : this.dateFormat(totalSecond % 60);
 
       const countdownTime = this.props.second ? `${s}秒` : `${d}天${h}:${m}:${s}`;
       return (
          //下面代码可以修改成您想要的格式
          <div>
-            <hr />
-            <h1>倒计时还剩：{countdownTime}</h1>
-            这个页面已经显示了：{this.time.hasPassTime / 1000}秒
+            <h3 style={{ color: "red" }}>倒计时还剩：{countdownTime}</h3>
+            
             {this.state.countdownShow > 0
                ?
-               ""
+               `您在该页面已经停留了：${this.time.hasPassTime / 1000}秒`
                :
                this.state.countdownShow !== "" ? <p style={{ color: "red" }}>时间到！</p> : ""
             }
-            <hr />
          </div>
       )
    }
