@@ -22,4 +22,3 @@
 **<CountdownComponent second="10" timeoutFn={timeoutFn} />**
 
 **<CountdownComponent second="100" />**
-## Usage👆
