@@ -4,9 +4,9 @@
 ![image](./images/image.png)
 
 ## 项目启动方法
-1. 运行：npm install    安装热更新等依赖
-2. 运行：webpack-dev-server   开启热更新
-3. 浏览器打开 http://localhost:8080/webpack-dev-server/  即可
+1. 运行：npm install       安装热更新等依赖
+2. 运行：npm run server    开启热更新并打开网页，npm会运行package.json中的"script"属性中的"server"对应的内部语句，即："webpack-dev-server --open"
+3. 当运行是发生错误显示： “ERROR in Entry module not found: Error: Can't resolve 'babel-loader' in.........”，这时则只需要运行："npm install babel-loader --save-dev"即可
 
 ## React的倒计时组件，基本用法：
 仅仅需要在你的代码中插入如下示例代码即可
