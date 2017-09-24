@@ -1,20 +1,34 @@
 {
-  "name": "05-01",
+  "name": "impackagename",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "description",
+  "main": "entrypoint",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "webpack-dev-server --open"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "keywords"
+  ],
+  "author": "huahizlin",
   "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
   "dependencies": {
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "babelify": "^7.3.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.1"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }
