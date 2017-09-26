@@ -2,7 +2,7 @@
  * @Author: 华志林 
  * @Date: 2017-09-19 14:02:24 
  * @Last Modified by: 华志林
- * @Last Modified time: 2017-09-20 10:26:43
+ * @Last Modified time: 2017-09-26 09:46:57
  * 
  * 
  * ↓↓↓↓↓↓↓《使用文档》必看↓↓↓↓↓↓↓
@@ -29,7 +29,7 @@
  * <CountdownComponent endTime={"2017/09/19 18:30:00"} />
  * 
  * <CountdownComponent second="10" timeoutFn={timeoutFn} />
- * <CountdownComponent second="100" />     
+ * <CountdownComponent second="60" />     
  * 
  * ↑↑↑↑↑↑↑ Usage ↑↑↑↑↑↑↑ 
  */
@@ -52,15 +52,14 @@ export default class CountdownComponent extends React.Component {
          this.time = {//都转成毫秒数
             endTime: Date.parse(new Date()) + this.props.second * 1000,
             myCorrNowTime: Date.parse(new Date()),//传入了时间，就是传入的客户端时间，否则就是自己的时间
-            hasPassTime: 0,//已经走过的时间，初始0
          }
       } else {
          this.time = {//都转成毫秒数
             endTime: Date.parse(this.props.endTime),
             myCorrNowTime: Date.parse(this.props.myCorrNowTime) || Date.parse(new Date()),//传入了时间，就是传入的客户端时间，否则就是自己的时间
-            hasPassTime: 0,//已经走过的时间，初始0
          }
       }
+      this.time.hasPassTime = 0;//已经走过的时间，初始0
 
       this._xTime = Date.parse(new Date()) - this.time.myCorrNowTime;//时间差值。只在最开始的构造函数中执行计算一次，算出本地与传入的时间差值，进行误差的回复
       this.countdownTotalTime = this.time.endTime - this.time.myCorrNowTime;
